@@ -31,6 +31,11 @@ pred = linear_svc.predict(features_test)
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(pred,labels_test)
 print accuracy
+
+from operator import itemgetter
+print itemgetter(10,26,50)(pred)
+chris = [name for name in pred if name == 1]
+print len(chris)
 #########################################################
 
 
