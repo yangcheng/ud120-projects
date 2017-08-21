@@ -18,13 +18,19 @@ from email_preprocess import preprocess
 ### and testing datasets, respectively
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
+from sklearn import svm
 
+linear_svc = svm.SVC(C=10000.0, kernel='rbf')
+#features_train = features_train[:len(features_train)/100]
+#labels_train = labels_train[:len(labels_train)/100]
+linear_svc.fit(features_train,labels_train)
 
-
-
+pred = linear_svc.predict(features_test)
 #########################################################
 ### your code goes here ###
-
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(pred,labels_test)
+print accuracy
 #########################################################
 
 
