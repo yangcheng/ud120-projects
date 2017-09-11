@@ -34,7 +34,7 @@ word_data = []
 ### can take a long time
 ### temp_counter helps you only look at the first 200 emails in the list so you
 ### can iterate your modifications quicker
-#temp_counter = -sys.maxint
+#temp_counter = 0
 
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
@@ -84,5 +84,5 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(stop_words="english")
 vectorizer.fit_transform(word_data)
 print len(vectorizer.get_feature_names())
-
+print vectorizer.get_feature_names()[34597]
 
