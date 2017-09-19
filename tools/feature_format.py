@@ -102,7 +102,7 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
     return np.array(return_list)
 
 
-def targetFeatureSplit( data ):
+def targetFea1tureSplit( data ):
     """ 
         given a numpy array like the one returned from
         featureFormat, separate out the first feature
